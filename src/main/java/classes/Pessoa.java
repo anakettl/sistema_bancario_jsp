@@ -15,13 +15,13 @@ public class Pessoa implements ValidaPessoa{
 
     public Pessoa(String nome, String dt_nasc) {
         this.setNome(nome);
-        this.dt_nasc = dt_nasc;
+        this.setDt_nasc(dt_nasc);
     }
 
     public Pessoa(int idPessoa, String nome, String dt_nasc) {
         this.idPessoa = idPessoa;
         this.setNome(nome);
-        this.dt_nasc = dt_nasc;
+        this.setDt_nasc(dt_nasc);
     }
 
     public int getIdPessoa() {
@@ -47,7 +47,9 @@ public class Pessoa implements ValidaPessoa{
     }
 
     public void setDt_nasc(String dt_nasc) {
-        this.dt_nasc = dt_nasc;
+        if (this.validarDtNasc(dt_nasc)) {
+            this.dt_nasc = dt_nasc;
+        }
     }
 
     @Override

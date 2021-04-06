@@ -16,18 +16,17 @@ public class PessoaTest{
     }
 
     @Test
-    void registerClienteWithInvalidName(){
+    void registerPessoaWithInvalidName(){
         pessoa.setNome("");
 
         assertEquals("", pessoa.getNome());
     }
 
     @Test
-    void registerClienteWithInvalidDtNasc(){
+    void registerPessoaWithInvalidDtNasc(){
         pessoa.setDt_nasc("");
 
         assertEquals("", pessoa.getDt_nasc());
     }
-
 
 }
