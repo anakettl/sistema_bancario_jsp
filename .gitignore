@@ -1,1 +1,8 @@
-target/
+#
+# Standard Maven .gitignore
+#
+target
+
+##Intellij
+.idea
+*.iml
