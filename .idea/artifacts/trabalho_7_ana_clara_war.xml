@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="trabalho_7_ana_clara:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>trabalho_7_ana_clara</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="trabalho_7_ana_clara-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="trabalho_7_ana_clara:war exploded" />
+    </root>
+  </artifact>
+</component>
