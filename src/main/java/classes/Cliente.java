@@ -4,7 +4,7 @@ import dao.ClienteDAO;
 
 import java.util.List;
 
-public class Cliente extends Pessoa {
+public class Cliente extends Pessoa implements ValidaCliente{
     private int idCliente;
     private String cpf;
     private String email;
@@ -15,9 +15,9 @@ public class Cliente extends Pessoa {
     public Cliente(int idPessoa, String nome, String dt_nasc, int idCliente, String cpf, String email, String telefone) {
         super(idPessoa, nome, dt_nasc);
         this.idCliente = idCliente;
-        this.cpf = cpf;
-        this.email = email;
-        this.telefone = telefone;
+        this.setCpf(cpf);
+        this.setEmail(email);
+        this.setTelefone(telefone);
     }
 
     public int getIdCliente() {
@@ -32,25 +32,32 @@ public class Cliente extends Pessoa {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setEmail(String email) {
+        if (this.validarEmail(email)) {
+            this.email = email;
+        }
     }
+
+    public void setTelefone(String telefone) {
+        if (this.validarTelefone(telefone)) {
+            this.telefone = telefone;
+        }
+    }
+
+    public void setCpf(String cpf) {
+        if (this.validarCpf(cpf)) {
+            this.cpf = cpf;
+        }
+    }
+
 
 
 
