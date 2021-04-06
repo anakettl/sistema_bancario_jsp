@@ -15,5 +15,19 @@ public class PessoaTest{
         pessoa = new Pessoa();
     }
 
+    @Test
+    void registerClienteWithInvalidName(){
+        pessoa.setNome("");
+
+        assertEquals("", pessoa.getNome());
+    }
+
+    @Test
+    void registerClienteWithInvalidDtNasc(){
+        pessoa.setDt_nasc("");
+
+        assertEquals("", pessoa.getDt_nasc());
+    }
+
 
 }

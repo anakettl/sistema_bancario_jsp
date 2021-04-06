@@ -2,7 +2,7 @@ package classes;
 
 import dao.PessoaDAO;
 
-public class Pessoa {
+public class Pessoa implements ValidaPessoa{
     private int idPessoa;
     private String nome;
     private String dt_nasc;
@@ -10,17 +10,17 @@ public class Pessoa {
     public Pessoa() {}
 
     public Pessoa(String nome) {
-        this.nome = nome;
+        this.setNome(nome);
     }
 
     public Pessoa(String nome, String dt_nasc) {
-        this.nome = nome;
+        this.setNome(nome);
         this.dt_nasc = dt_nasc;
     }
 
     public Pessoa(int idPessoa, String nome, String dt_nasc) {
         this.idPessoa = idPessoa;
-        this.nome = nome;
+        this.setNome(nome);
         this.dt_nasc = dt_nasc;
     }
 
@@ -41,7 +41,9 @@ public class Pessoa {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if (this.validarNome(nome)) {
+            this.nome = nome;
+        }
     }
 
     public void setDt_nasc(String dt_nasc) {

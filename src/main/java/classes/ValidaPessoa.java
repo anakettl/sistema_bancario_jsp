@@ -5,4 +5,9 @@ public interface ValidaPessoa {
         if(nome != null) return true;
         return false;
     }
+
+    default boolean validarDtNasc(String dt_nasc){
+        if(dt_nasc != null) return true;
+        return false;
+    }
 }
