@@ -16,8 +16,8 @@ public class Cliente extends Pessoa implements ValidaCliente{
         super(idPessoa, nome, dt_nasc);
         this.idCliente = idCliente;
         this.setCpf(cpf);
-        this.email = email;
-        this.telefone = telefone;
+        this.setEmail(email);
+        this.setTelefone(telefone);
     }
 
     public int getIdCliente() {
@@ -36,16 +36,20 @@ public class Cliente extends Pessoa implements ValidaCliente{
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getTelefone() {
         return telefone;
     }
 
+    public void setEmail(String email) {
+        if (this.validarEmail(email)) {
+            this.email = email;
+        }
+    }
+
     public void setTelefone(String telefone) {
-        this.telefone = telefone;
+        if (this.validarTelefone(telefone)) {
+            this.telefone = telefone;
+        }
     }
 
     public void setCpf(String cpf) {

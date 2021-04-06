@@ -11,19 +11,29 @@ public class ClienteTest {
     private Cliente cliente;
 
     @BeforeEach
-    public void setUp() throws Exception{
+    public void setUp(){
         cliente = new Cliente();
     }
 
     @Test
-    void registerClienteWithoutInvalidCpf(){
-        cliente.setIdPessoa(1);
-        cliente.setDt_nasc("01/01/2011");
+    void registerClienteWithInvalidCpf(){
         cliente.setCpf("1243");
-        cliente.setEmail("flavia@gmail.com");
-        cliente.setTelefone("98475392");
 
         assertEquals(null, cliente.getCpf());
+    }
+
+    @Test
+    void registerClienteWithInvalidEmail(){
+        cliente.setEmail("");
+
+        assertEquals(null, cliente.getEmail());
+    }
+
+    @Test
+    void registerClienteWithInvalidTelefone(){
+        cliente.setTelefone("");
+
+        assertEquals(null, cliente.getTelefone());
     }
 
 }
